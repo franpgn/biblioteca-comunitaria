@@ -1,110 +1,70 @@
-# Biblioteca Comunitária
-Aplicação web para gestão de livros de uma biblioteca com catálogo do google books
+# Getting Started with Create React App
 
----
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-# Fluxo de Branches no GitHub
+## Available Scripts
 
-Este documento explica como utilizar as branches de forma adequada no projeto, seguindo boas práticas para organização e colaboração.
+In the project directory, you can run:
 
----
+### `npm start`
 
-## 📋 Visão Geral
-- **Não faça commits diretamente na branch `main`** (ela representa a versão estável em produção).
-- **Não interaja com a branch `develop`** (o time de projetos cuidará dela).
-- **Crie branches específicas** para cada tipo de tarefa:
-  - `feature/`: Novas funcionalidades
-  - `bugfix/`: Correções de bugs não urgentes
-  - `hotfix/`: Correções críticas em produção
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
----
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-## 🌿 Tipos de Branches
+### `npm test`
 
-### 1. `feature/`
-- **Quando usar**: Para desenvolver novas funcionalidades.
-- **Nome da branch**: `feature/nome-da-feature`  
-  Exemplo: `feature/login-com-google`
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### 2. `bugfix/`
-- **Quando usar**: Para corrigir bugs identificados em ambiente de teste.
-- **Nome da branch**: `bugfix/descricao-breve`  
-  Exemplo: `bugfix/corrigir-erro-de-carregamento`
+### `npm run build`
 
-### 3. `hotfix/`
-- **Quando usar**: Para corrigir problemas críticos em produção.
-- **Nome da branch**: `hotfix/descricao-urgente`  
-  Exemplo: `hotfix/corrigir-falha-de-seguranca`
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
----
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-## 🔄 Fluxo de Trabalho
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-1. **Crie uma branch** a partir da `main`:
-   ```bash
-   git checkout main
-   git pull origin main
-   git checkout -b tipo/nome-da-branch
+### `npm run eject`
 
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-2. **Trabalhe na sua branch:**
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Faça commits pequenos e descritivos
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-Mantenha o foco no propósito da branch
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-3. **Envie para o repositório remoto:**
-   ```bash
-   git push origin tipo/nome-da-branch
+## Learn More
 
-4. **Abra um Pull Request (PR):**
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-Direcione o PR para a branch main
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-Descreva claramente as mudanças no PR
+### Code Splitting
 
-5. **Após aprovação:**
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-O time de projetos fará o merge na main
+### Analyzing the Bundle Size
 
-A branch será excluída após o merge
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
----
+### Making a Progressive Web App
 
-## ✅ **Boas Práticas**
-Mantenha as branches curtas e focadas (1 branch = 1 objetivo)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-Teste suas alterações localmente antes de abrir um PR
+### Advanced Configuration
 
-Use nomes claros nas branches e PRs
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-Mantenha sua branch atualizada com a `main`:
-  ```bash
-   git push origin tipo/nome-da-branch
-  ```
----
+### Deployment
 
-## ❗ **Importante**
-Não faça merge manualmente na main ou develop
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-Não trabalhe diretamente na main
+### `npm run build` fails to minify
 
-Não crie branches genéricas (ex: minhas-alteracoes)
-
-O time de projetos será responsável por:
-
-Fazer o merge das branches aprovadas na main
-
-Gerenciar a sincronização com a develop
-
-Lidar com conflitos e versionamento
-
----
-
-## **Sempre pergunte para um membro do time de projetos se houver dúvida, não faça nenhum commit ou pull request sem 100% de certeza do que está fazendo!!**
-
----
-
-## **Esboço das Interfaces:**
-
-![image](https://github.com/user-attachments/assets/86b94758-2136-4a54-b430-753e50220eaf)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
