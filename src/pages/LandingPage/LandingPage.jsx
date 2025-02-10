@@ -1,10 +1,10 @@
 import React from "react";
-import Header from "../components/Header/Header";
-import LogoBltc from "../assets/Logo.png";
+import Header from "../../components/Header/Header";
+import LogoBltc from "../../assets/Logo.png";
 import "./LandingPage.css";
-import Mail from "../assets/mail.svg";
-import Wpp from "../assets/Wpp.svg";
-import Footer from "../components/Footer/Footer";
+import Mail from "../../assets/mail.svg";
+import Wpp from "../../assets/Wpp.svg";
+import Footer from "../../components/Footer/Footer";
 
 const LandingPage = () => {
   return (
