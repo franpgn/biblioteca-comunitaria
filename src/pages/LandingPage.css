@@ -1,0 +1,114 @@
+
+/* o qu envolve todas as seções */
+h2 {
+    font-size: 40px;
+}
+
+p {
+    font-size: 24px;
+}
+
+.container-conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    margin: 0;
+    padding: 0 20px;
+    height: 100vh;
+}
+/* Título com a imagem de fundo */
+.container-titulo h1{
+    background-image: url('../assets/bg-landingpage.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 450px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+}
+
+
+.container-conteudo-sobre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 270px;
+}
+
+.container-conteudo-contato {
+    background-color: #FFF0D7;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 650px;
+}
+
+.container-conteudo-contato ul {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    list-style: none;
+    padding: 0;
+    gap: 5px;
+}
+
+
+.container-conteudo-contato li {
+    display: flex;
+    align-items: center;
+}
+
+.container-conteudo-contato li a{
+    text-decoration: none;
+    color: black;
+    transition: color 0.4s;
+}
+
+.container-conteudo-contato li a:hover{
+    color: #01764C;
+}
+
+.conteudo-contato-infos {
+    text-align: left;
+}
+
+.contato-logo {
+    width: 240px;
+    height: 120px;
+}
+
+.contato-sac-ico {
+    width: 20px;
+    height: 20px; 
+    margin-right: 10px; 
+    vertical-align: middle;
+}
+
+.conteudo-principal-ondeestamos {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.conteudo-principal-ondeestamos div {
+    display: flex;
+    flex-direction: column;
+}
+
+.conteudo-principal-ondeestamos p {
+    font-size: 20px;
+    font-weight: bold;
+}
+.ondeestamos-mapa {
+    width: 670px;
+    height: 330px;
+}
+
+.container-conteudo-principal {
+    width: 100%;
+}
