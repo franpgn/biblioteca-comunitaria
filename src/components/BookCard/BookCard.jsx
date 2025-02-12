@@ -6,11 +6,15 @@ const BookCard = ({ bookList }) => {
         <div className="book-card-container">
             {bookList.map((book) => (
                 <div key={book.id} className="book-card">
-                    <img src={book.thumbnail} alt="Capa do Livro" />
-                    <h2>{book.title}</h2>
-                    <p>{book.authors}</p>
-                    <p>{book.publisher}</p>
-                    <p>{book.publishedDate}</p>
+                    {book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.thumbnail ? (
+                        <img src={book.volumeInfo.imageLinks.thumbnail} alt="Capa do Livro" />
+                    ) : (
+                        <div className="no-thumbnail">Sem imagem</div>
+                    )}
+                    <h2>{book.volumeInfo.title}</h2>
+                    <p>{book.volumeInfo.authors}</p>
+                    <p>{book.volumeInfo.publisher}</p> 
+                    <p>{book.volumeInfo.publishedDate}</p>
                 </div>
             ))}
         </div>
