@@ -10,7 +10,6 @@ const BookListPage = () => {
     return (
         <div>
             <Header />
-
             <Footer />
         </div>
     );
