@@ -33,6 +33,7 @@ const BookListPage = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [order, setOrder] = useState("relevance");
 
   useEffect(() => {
     if (
@@ -41,14 +42,14 @@ const BookListPage = () => {
       searchParams.genre ||
       searchParams.year
     ) {
-        searchBooks();
+      searchBooks();
     } else {
-      getBooks("all", currentIndex).then((data) => {
+      getBooks("all", currentIndex, order).then((data) => {
         setSearchResults(data);
         console.log(data);
       });
     }
-  }, [currentPage, currentIndex]);
+  }, [currentPage, currentIndex, order]);
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
@@ -57,6 +58,10 @@ const BookListPage = () => {
   const handleSetCurrentIndex = (index) => {
     setCurrentIndex(index);
   };
+
+  const handleOrderChange = (e) => {
+    setOrder(e.target.value);
+  }
 
   const searchBooks = async () => {
     let query = "";
@@ -77,7 +82,7 @@ const BookListPage = () => {
 
     const url = `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(
       query
-    )}&maxResults=12&startIndex=${encodeURIComponent(currentIndex)}`;
+    )}&maxResults=12&startIndex=${encodeURIComponent(currentIndex)}&orderBy=${encodeURIComponent(order)}`;
     const response = await fetch(url);
     const data = await response.json();
 
@@ -92,6 +97,64 @@ const BookListPage = () => {
   return (
     <div className="h-screen flex flex-col">
       <Header />
+      <div className="w-full flex justify-center mt-4">
+        <div className="w-full max-w-3xl">
+          {/* Contêiner flexível para a barra de pesquisa, texto e botão */}
+          <div className="flex items-center gap-4">
+            {/* Barra de pesquisa com ícone */}
+            <div className="relative flex-1">
+              {" "}
+              {/* Use flex-1 para ocupar o espaço disponível */}
+              <input
+                type="text"
+                placeholder="Pesquisar..."
+                value={searchParams.title}
+                onChange={(e) =>
+                    setSearchParams({ ...searchParams, title: e.target.value })
+                  }
+                className="w-80 pl-10 pr-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:border-[#01764C] text-sm font-sans"
+              />
+              <svg
+                className="absolute left-3 top-2.5 h-5 w-5 text-gray-500"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                ></path>
+              </svg>
+              <button
+              className="bg-[#01764C] text-white px-4 py-2 rounded-md hover:bg-[#015a3a] transition duration-300 ease-in-out font-sans text-sm ml-[10px]"
+              onClick={() => {searchBooks(); setCurrentPage(1)}}
+            >
+              Pesquisar
+            </button>
+            </div>
+            {/* Texto "ORDENAR POR" */}
+            <span className="text-base font-bold text-black font-sans whitespace-nowrap flex-shrink-0">
+              ORDENAR POR:
+            </span>{" "}
+            {/* Adicione flex-shrink-0 para evitar que o texto seja comprimido */}
+            {/* Botão circular de filtro */}
+            <select className="flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-[#01764C] text-white focus:outline-none flex-shrink-0"
+            value={order}
+            onChange={handleOrderChange}>
+                <option value="relevance">Relevância</option>
+                <option value="newest">Mais recentes</option>
+            </select>
+          </div>
+          {/* Linha preta que começa na barra de pesquisa e termina no botão verde */}
+          <div className="w-full h-px bg-black mt-2"></div>
+        </div>
+      </div>
+
+      {/* Espaço entre a barra de pesquisa e o conteúdo abaixo */}
+      <div className="mt-8"></div>
       {/* Retângulo cinza claro na vertical */}
       <div className="flex flex-1">
         {/* Aside (menu lateral)  */}
@@ -99,7 +162,7 @@ const BookListPage = () => {
           {/* Div que contém as seções com fundo cinza */}
           <div className="bg-gray-100 p-4 rounded-lg space-y-4">
             {/* Seção */}
-            <div className="bg-[rgba(255,_240,_215,_1)] p-3 rounded-lg shadow-md">
+            {/* <div className="bg-[rgba(255,_240,_215,_1)] p-3 rounded-lg shadow-md">
               <h3 className="text-base font-bold text-black mb-1 font-sans">
                 Título
               </h3>
@@ -115,7 +178,7 @@ const BookListPage = () => {
                 />
                 <SearchIcon />
               </div>
-            </div>
+            </div> */}
             {/* Seção */}
             <div className="bg-[rgba(255,_240,_215,_1)] p-3 rounded-lg shadow-md">
               <h3 className="text-base font-bold text-black mb-1 font-sans">
@@ -173,7 +236,7 @@ const BookListPage = () => {
             {/* Botão */}
             <button
               className="bg-[#01764C] text-white px-6 py-2 rounded-md hover:bg-[#015a3a] transition duration-300 ease-in-out font-sans text-sm"
-              onClick={searchBooks}
+              onClick={() => {searchBooks(); setCurrentPage(1)}}
             >
               Pesquisar
             </button>
