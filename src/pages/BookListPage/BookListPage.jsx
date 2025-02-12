@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
-import "./BookListPage.css";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import BookCard from "../../components/BookCard/BookCard";
 import { getBooks } from "../../services/BookService";
 import PaginationComponent from "../../components/Pagination/PaginationComponent";
