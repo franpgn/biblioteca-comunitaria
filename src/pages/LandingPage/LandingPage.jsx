@@ -1,12 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../../components/Header/Header";
 import LogoBltc from "../../assets/Logo.png";
 import Mail from "../../assets/mail.svg";
 import Wpp from "../../assets/Wpp.svg";
 import Footer from "../../components/Footer/Footer";
 import Background from "../../assets/bg-landingpage.png";
+import { getBooksLandingPage } from "../../services/BookService";
+import BookCard from "../../components/BookCard/BookCard";
 
 const LandingPage = () => {
+
+  const [relevanceBooks, setRelevanceBooks] = useState([]);
+  const [newestBooks, setNewestBooks] = useState([]);
+  const [mostRequestedBooks, setMostRequestedBooks] = useState([]);
+
+  useEffect(() => {
+    getBooksLandingPage("Harry potter", 0, "relevance").then((data) => {
+      setRelevanceBooks(data);
+    });
+    getBooksLandingPage("thriller", 0, "newest").then((data) => {
+      setNewestBooks(data);
+    });
+    getBooksLandingPage("Lord of Rings", 0, "relevance").then((data) => {
+      setMostRequestedBooks(data);
+    });
+  }, []);
+
   return (
     <div>
       <Header />
@@ -68,12 +87,24 @@ const LandingPage = () => {
         </div>
         <div className="w-full">
           <h2 className="text-4xl">Livros Destaques</h2>
+            <div className="flex justify-around">
+              <div></div>
+              <BookCard bookList={relevanceBooks} />
+            </div>
         </div>
         <div className="w-full">
           <h2 className="text-4xl">Livros mais procurados</h2>
+          <div className="flex justify-around">
+          <div></div>
+          <BookCard bookList={mostRequestedBooks} />
+          </div>
         </div>
         <div className="w-full">
           <h2 className="text-4xl">Pré-Lançamentos</h2>
+          <div className="flex justify-around">
+          <div></div>
+          <BookCard bookList={newestBooks} />
+          </div>
         </div>
         <div className="w-full">
           <h2 className="text-4xl">Onde nós estamos</h2>
@@ -100,7 +131,7 @@ const LandingPage = () => {
         </div>
       </div>
       <div></div>
-      <div className="bg-[#FFF0D7] flex items-center justify-around mt-[750px]">
+      <div className="bg-[#FFF0D7] flex items-center justify-around mt-[1800px]">
         <div>
           <img
             src={LogoBltc}
