@@ -47,6 +47,9 @@ const BookCard = ({ bookList }) => {
             <p className="text-[15px] m-0 text-black font-medium">
               {book.volumeInfo.publishedDate}
             </p>
+            <p className="text-[15px] m-0 text-black font-medium">
+              <strong>Status:</strong> {book.status ? book.status : "Desconhecido"}
+            </p>
           </div>
         ))}
       </div>
@@ -87,6 +90,10 @@ const BookCard = ({ bookList }) => {
                   {bookSelected.volumeInfo.publishedDate
                     ? bookSelected.volumeInfo.publishedDate
                     : "Data desconhecida"}
+                </p>
+                <p>
+                  <strong>Status:</strong>{" "}
+                  {bookSelected.status ? bookSelected.status : "Desconhecido"}
                 </p>
               </div>
             </div>
