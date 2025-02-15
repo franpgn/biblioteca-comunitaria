@@ -12,6 +12,7 @@ function addBook(title, author, genre, year) {
         author: author,
         genre: genre,
         year: year
+        available: true;
     };
 
     // Gera uma chave única usando o timestamp atual
@@ -38,9 +39,52 @@ function searchBook(search) {
 
         // Verifica se o JSON do livro contém o termo de busca e se positivo insere no array
         if (book.toLowerCase().includes(search)) {
-            results.push({ book: JSON.parse(book) });
+            results.push({ key, book: JSON.parse(book) });
         }
     }
 
     return results;
+}
+
+/**
+ * Empresta um livro, alterando sua disponibilidade para falso.
+ * @param {string} id - O ID (chave) do livro no localStorage.
+ * @returns {Object|null} O livro atualizado ou null se não encontrado.
+ */
+function lendBook(id) {
+    const book = JSON.parse(localStorage.getItem(id));
+
+    if (book) {
+        if (book.available) {
+            book.available = false;
+            localStorage.setItem(id, JSON.stringify(book));
+
+            return book;
+        } else {
+            return null;
+        }
+    } else {
+        return null;
+    }
+}
+
+/**
+ * Devolve um livro, alterando sua disponibilidade para verdadeiro.
+ * @param {string} id - O ID (chave) do livro no localStorage.
+ * @returns {Object|null} O livro atualizado ou null se não encontrado.
+ */
+function returnBook(id) {
+    const book = JSON.parse(localStorage.getItem(id));
+
+    if (book) {
+        if (!book.available) {
+            book.available = true;
+            localStorage.setItem(id, JSON.stringify(book));
+            return book;
+        } else {
+            return null;
+        }
+    } else {
+        return null;
+    }
 }
