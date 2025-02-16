@@ -129,7 +129,7 @@ const BookListPage = () => {
                 ></path>
               </svg>
               <button
-              className="bg-[#01764C] text-white px-4 py-2 rounded-md hover:bg-[#015a3a] transition duration-300 ease-in-out font-sans text-sm ml-[10px]"
+              className="bg-[#01764C] text-white px-4 py-2 rounded-sm hover:bg-[#015a3a] transition duration-300 ease-in-out font-sans text-sm ml-[10px]"
               onClick={() => {searchBooks(); setCurrentPage(1)}}
             >
               Pesquisar
@@ -235,7 +235,7 @@ const BookListPage = () => {
             </div>
             {/* Botão */}
             <button
-              className="bg-[#01764C] text-white px-6 py-2 rounded-md hover:bg-[#015a3a] transition duration-300 ease-in-out font-sans text-sm"
+              className="bg-[#01764C] text-white px-6 py-2 rounded-sm hover:bg-[#015a3a] transition duration-300 ease-in-out font-sans text-sm"
               onClick={() => {searchBooks(); setCurrentPage(1)}}
             >
               Pesquisar

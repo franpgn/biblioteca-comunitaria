@@ -4,7 +4,7 @@ import LogoBltc from "../../assets/Logo.png";
 import Mail from "../../assets/mail.svg";
 import Wpp from "../../assets/Wpp.svg";
 import Footer from "../../components/Footer/Footer";
-import Background from "../../assets/bg-landingpage.png";
+import Background from "../../assets/bg-landingpage.jpg";
 import { getBooksLandingPage } from "../../services/BookService";
 import BookCard from "../../components/BookCard/BookCard";
 
@@ -35,7 +35,7 @@ const LandingPage = () => {
           style={{
             backgroundImage: `url(${Background})`,
             backgroundSize: "cover",
-            backgroundPosition: "center",
+            backgroundPosition: "center 95%",
             backgroundRepeat: "no-repeat",
           }}
         >
