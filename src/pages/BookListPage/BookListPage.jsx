@@ -129,19 +129,19 @@ const BookListPage = () => {
                 ></path>
               </svg>
               <button
-              className="bg-[#01764C] text-white px-4 py-2 rounded-md hover:bg-[#015a3a] transition duration-300 ease-in-out font-sans text-sm ml-[10px]"
+              className="bg-[#01764C] border-none text-white px-4 py-2 rounded-md hover:bg-[#015a3a] transition duration-300 ease-in-out font-sans text-sm ml-[10px]"
               onClick={() => {searchBooks(); setCurrentPage(1)}}
             >
               Pesquisar
             </button>
             </div>
             {/* Texto "ORDENAR POR" */}
-            <span className="text-base font-bold text-black font-sans whitespace-nowrap flex-shrink-0">
-              ORDENAR POR:
+            <span className="text-base font-semibold text-black font-sans whitespace-nowrap flex-shrink-0">
+              Ordenar Por:
             </span>{" "}
             {/* Adicione flex-shrink-0 para evitar que o texto seja comprimido */}
             {/* Botão circular de filtro */}
-            <select className="flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-[#01764C] text-white focus:outline-none flex-shrink-0"
+            <select className="flex items-center justify-center gap-2 px-4 py-2 rounded-md bg-[#01764C] text-white focus:outline-none flex-shrink-0"
             value={order}
             onChange={handleOrderChange}>
                 <option value="relevance">Relevância</option>
@@ -160,7 +160,7 @@ const BookListPage = () => {
         {/* Aside (menu lateral)  */}
         <aside className="w-74 ml-5 flex flex-col h-full">
           {/* Div que contém as seções com fundo cinza */}
-          <div className="bg-gray-100 p-4 rounded-lg space-y-4">
+          <div className="p-4 rounded-lg space-y-4">
             {/* Seção */}
             {/* <div className="bg-[rgba(255,_240,_215,_1)] p-3 rounded-lg shadow-md">
               <h3 className="text-base font-bold text-black mb-1 font-sans">
@@ -180,7 +180,7 @@ const BookListPage = () => {
               </div>
             </div> */}
             {/* Seção */}
-            <div className="bg-[rgba(255,_240,_215,_1)] p-3 rounded-lg shadow-md">
+            <div className="bg-[rgba(189,_173,_128,_1)] p-3 rounded-lg shadow-md">
               <h3 className="text-base font-bold text-black mb-1 font-sans">
                 Autor
               </h3>
@@ -188,7 +188,7 @@ const BookListPage = () => {
                 <input
                   type="text"
                   placeholder="Pesquisar editora..."
-                  className="w-70 pl-8 pr-3 py-1 rounded-lg border border-gray-300 bg-gray-50 focus:outline-none focus:border-[#01764C] text-sm font-sans"
+                  className="w-70 pl-8 pr-3 py-1 rounded-lg border border-gray-300 focus:outline-none focus:border-[#01764C] text-sm font-sans"
                   value={searchParams.author}
                   onChange={(e) =>
                     setSearchParams({ ...searchParams, author: e.target.value })
@@ -198,7 +198,7 @@ const BookListPage = () => {
               </div>
             </div>
             {/* Seção */}
-            <div className="bg-[rgba(255,_240,_215,_1)] p-3 rounded-lg shadow-md">
+            <div className="bg-[rgba(189,_173,_128,_1)] p-3 rounded-lg shadow-md">
               <h3 className="text-base font-bold text-black mb-1 font-sans">
                 Gênero
               </h3>
@@ -206,7 +206,7 @@ const BookListPage = () => {
                 <input
                   type="text"
                   placeholder="Pesquisar gênero..."
-                  className="w-70 pl-8 pr-3 py-1 rounded-lg border border-gray-300 bg-gray-50 focus:outline-none focus:border-[#01764C] text-sm font-sans"
+                  className="w-70 pl-8 pr-3 py-1 rounded-lg border border-gray-300 focus:outline-none focus:border-[#01764C] text-sm font-sans"
                   value={searchParams.genre}
                   onChange={(e) =>
                     setSearchParams({ ...searchParams, genre: e.target.value })
@@ -216,7 +216,7 @@ const BookListPage = () => {
               </div>
             </div>
             {/* Seção */}
-            <div className="bg-[rgba(255,_240,_215,_1)] p-3 rounded-lg shadow-md">
+            <div className="bg-[rgba(189,_173,_128,_1)] p-3 rounded-lg shadow-md">
               <h3 className="text-base font-bold text-black mb-1 font-sans">
                 Ano
               </h3>
@@ -224,7 +224,7 @@ const BookListPage = () => {
                 <input
                   type="text"
                   placeholder="Pesquisar categoria..."
-                  className="w-70 pl-8 pr-3 py-1 rounded-lg border border-gray-300 bg-gray-50 focus:outline-none focus:border-[#01764C] text-sm font-sans"
+                  className="w-70 pl-8 pr-3 py-1 rounded-lg border border-gray-300 focus:outline-none focus:border-[#01764C] text-sm font-sans"
                   value={searchParams.year}
                   onChange={(e) =>
                     setSearchParams({ ...searchParams, year: e.target.value })
@@ -235,7 +235,7 @@ const BookListPage = () => {
             </div>
             {/* Botão */}
             <button
-              className="bg-[#01764C] text-white px-6 py-2 rounded-md hover:bg-[#015a3a] transition duration-300 ease-in-out font-sans text-sm"
+              className="bg-[#01764C] border-none text-white px-6 py-2 rounded-md hover:bg-[#015a3a] transition duration-300 ease-in-out font-sans text-sm"
               onClick={() => {searchBooks(); setCurrentPage(1)}}
             >
               Pesquisar
@@ -244,7 +244,7 @@ const BookListPage = () => {
           </div>
         </aside>
         {/* Conteúdo principal */}
-        <main className="flex-1 p-6 bg-white">
+        <main className="flex-1 p-6">
           {searchResults.length > 0 ? (
             <div>
               <h2 className="text-xl font-bold mb-4">Resultados:</h2>

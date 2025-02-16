@@ -3,6 +3,9 @@ import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import LandingPage from './pages/LandingPage/LandingPage';
 import BookListPage from './pages/BookListPage/BookListPage';
+import CadastroPage from './pages/CadastroPage/CadastroPage';
+
+
 
 function App() {
   /*Importando o cliente do Supabase
@@ -43,6 +46,7 @@ function App() {
             <Routes>
               <Route path="/" Component={LandingPage}/>
               <Route path="/booklist" Component={BookListPage}/>
+              <Route path="/cadastroPage" Component={CadastroPage}/>
             </Routes>
     </Router>
   );
