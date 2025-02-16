@@ -36,12 +36,11 @@ const BookCard = ({ bookList }) => {
 
   return (
     <div>
-      <div className="flex gap-1.5 flex-wrap max-w-full px-12 justify-start items-center">
+      <div className="flex gap-2 flex-wrap max-w-full px-12 justify-start items-center">
         {bookList.map((book) => (
           <div
             key={book.id}
-            className="flex p-2.5 w-[200px] h-[330px] mt-5 flex-col items-start transition-transform duration-400 cursor-pointer border-r border-[#777572] hover:scale-105"
-            onClick={() => handleBookClick(book)}
+            className="flex bg-gray-200 bg-opacity-25 pl-4 pt-4 pr-4 pb-2 w-[200px] shadow-lg rounded-xl h-[330px] mt-5 mb-5 flex-col items-start transition-transform duration-400 cursor-pointer shadow-xs hover:scale-[1.03]"            onClick={() => handleBookClick(book)}
           >
             {book.volumeInfo.imageLinks?.thumbnail ? (
               <img src={book.volumeInfo.imageLinks.thumbnail} alt="Capa do Livro" />
