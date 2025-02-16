@@ -4,7 +4,7 @@ import LogoBltc from "../../assets/Logo.png";
 import Mail from "../../assets/mail.svg";
 import Wpp from "../../assets/Wpp.svg";
 import Footer from "../../components/Footer/Footer";
-import Background from "../../assets/bg-landingpage.png";
+import Background from "../../assets/bg-landingpage.jpg";
 import { getBooksLandingPage } from "../../services/BookService";
 import BookCard from "../../components/BookCard/BookCard";
 
@@ -29,20 +29,25 @@ const LandingPage = () => {
   return (
     <div>
       <Header />
-      <div className="container-titulo">
+      <div className="container-titulo relative w-full h-[450px]">
+          <h1
+            className="w-full h-full m-0 flex items-center justify-center text-white text-[48px] font-bold z-0"
+            style={{
+              backgroundImage: `url(${Background})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              filter: "brightness(0.78)",
+            }}
+          >
+        </h1>
         <h1
-          className="w-full h-[450px] m-0 flex items-center justify-center text-white text-[48px]"
-          style={{
-            backgroundImage: `url(${Background})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-          }}
+          className="absolute inset-0 m-0 flex items-center justify-center text-white text-[48px] font-bold z-10"
         >
-          OS LIVROS MAIS FAMOSOS VOCÊ ENCONTRA AQUI
+        Biblioteca Comunitária
         </h1>
       </div>
-      <div className="flex flex-col items-baseline m-0 p-0 px-5 h-screen">
+      <div className="flex flex-col items-baseline m-0 p-0 px-5 h-screen" id="quem-somos">
         <div className="flex flex-col items-center justify-center px-[270px]">
           <h2 className="text-4xl">Sobre Nós</h2>
           <p className="text-[24px]">
@@ -154,7 +159,7 @@ const LandingPage = () => {
               </li>
             </ul>
           </div>
-          <div className="flex flex-col items-start list-none p-0 gap-1">
+          <div className="flex flex-col items-start list-none p-0 gap-1" id="contato">
             <h3 className="text-3xl ">Fale conosco</h3>
             <ul className="p-0">
               <li className="flex items-center">

@@ -4,6 +4,21 @@ import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
     const location = useLocation();
+
+    const handleScrollQuemSomos = () => {
+        const quemSomosElement = document.getElementById('quem-somos');
+        if (quemSomosElement) {
+            quemSomosElement.scrollIntoView({ behavior: "smooth" });
+        }
+    }
+
+    const handleScrollContato = () => {
+        const contatoElement = document.getElementById('contato');
+        if (contatoElement) {
+            contatoElement.scrollIntoView({ behavior: "smooth" });
+        }
+    }
+
     return (
         <header className="flex bg-[#bdad80] items-center justify-between px-4">
             <div>
@@ -12,8 +27,8 @@ const Header = () => {
             <div className="flex items-center gap-4 mx-auto">
                 <Link to="/" className={`text-[#363435] no-underline text-lg font-bold transition-colors duration-400 p-1.5 rounded-md hover:text-white hover:bg-[#01764C] ${location.pathname === '/' ?  'bg-[#01764C] text-white'  :  'bg-transparent' }`}>Início</Link>
                 <Link to="/booklist" className={`text-[#363435] no-underline text-lg font-bold transition-colors duration-400 p-1.5 rounded-md hover:text-white hover:bg-[#01764C] ${location.pathname === '/booklist' ? 'bg-[#01764C] text-white'  :  'bg-transparent'}`}>Catálogo</Link>
-                <Link to="/" className="text-[#363435] no-underline text-lg font-bold transition-colors duration-400 p-1.5 rounded-md hover:text-white hover:bg-[#01764C]">Quem Somos</Link>
-                <Link to="/" className="text-[#363435] no-underline text-lg font-bold transition-colors duration-400 p-1.5 rounded-md hover:text-white hover:bg-[#01764C]">Contato</Link>
+                <Link to="/" className="text-[#363435] no-underline text-lg font-bold transition-colors duration-400 p-1.5 rounded-md hover:text-white hover:bg-[#01764C]" onClick={handleScrollQuemSomos}>Quem Somos</Link>
+                <Link to="/" className="text-[#363435] no-underline text-lg font-bold transition-colors duration-400 p-1.5 rounded-md hover:text-white hover:bg-[#01764C]" onClick={handleScrollContato}>Contato</Link>
             </div>
             <div className="w-[150px]"></div>
         </header>
