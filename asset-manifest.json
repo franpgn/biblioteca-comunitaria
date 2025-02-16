@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/franpgn/biblioteca-comunitaria/static/css/main.1dbd478c.css",
+    "main.js": "/franpgn/biblioteca-comunitaria/static/js/main.124a9373.js",
+    "static/js/198.72690e55.chunk.js": "/franpgn/biblioteca-comunitaria/static/js/198.72690e55.chunk.js",
+    "static/js/488.9cf75e10.chunk.js": "/franpgn/biblioteca-comunitaria/static/js/488.9cf75e10.chunk.js",
+    "static/media/bg-landingpage.jpg": "/franpgn/biblioteca-comunitaria/static/media/bg-landingpage.81ed4ecaf971545da2e6.jpg",
+    "static/media/Logo.png": "/franpgn/biblioteca-comunitaria/static/media/Logo.8769d75dbc79afb92e62.png",
+    "static/media/Wpp.svg": "/franpgn/biblioteca-comunitaria/static/media/Wpp.e864f23ee2e0950f451f93509b5c293f.svg",
+    "index.html": "/franpgn/biblioteca-comunitaria/index.html",
+    "static/media/mail.svg": "/franpgn/biblioteca-comunitaria/static/media/mail.8cea2ed0839705781e93087103e6dcab.svg",
+    "main.1dbd478c.css.map": "/franpgn/biblioteca-comunitaria/static/css/main.1dbd478c.css.map",
+    "main.124a9373.js.map": "/franpgn/biblioteca-comunitaria/static/js/main.124a9373.js.map",
+    "198.72690e55.chunk.js.map": "/franpgn/biblioteca-comunitaria/static/js/198.72690e55.chunk.js.map",
+    "488.9cf75e10.chunk.js.map": "/franpgn/biblioteca-comunitaria/static/js/488.9cf75e10.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1dbd478c.css",
+    "static/js/main.124a9373.js"
+  ]
+}
