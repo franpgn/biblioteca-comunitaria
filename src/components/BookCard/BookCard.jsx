@@ -63,7 +63,7 @@ const BookCard = ({ bookList }) => {
       </div>
       {showBook && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-          <div className="p-6 rounded-lg max-w-lg w-full bg-[#FFF0D7] relative">
+          <div className="p-6 rounded-lg max-w-lg w-full bg-[#bdad80] relative">
             <button
               className="absolute top-2 right-2 text-black text-xl rounded-full w-8 h-8 flex items-center justify-center cursor-pointer"
               onClick={handleCloseModal}
@@ -84,14 +84,14 @@ const BookCard = ({ bookList }) => {
             <p><strong>Descrição:</strong> {bookSelected.volumeInfo.description || "Descrição não disponível"}</p>
             {!borrowedBooks[bookSelected.id] ? (
               <button
-                className="mt-4 bg-green-500 text-white px-4 py-2 rounded"
+                className="mt-4 bg-[#01764C] border-none text-white px-4 py-2 rounded-md hover:bg-[#015a3a] transition duration-300 ease-in-out font-sans text-sm"
                 onClick={handleBorrowClick}
               >
                 Emprestar
               </button>
             ) : (
               <button
-                className="mt-4 bg-red-500 text-white px-4 py-2 rounded"
+                className="mt-4 bg-[#871e2c] border-none text-white px-4 py-2 rounded-md hover:bg-[#5c141e] transition duration-300 ease-in-out font-sans text-sm"
                 onClick={() => handleReturnBook(bookSelected.id)}
               >
                 Devolver
@@ -127,7 +127,7 @@ const BookCard = ({ bookList }) => {
               onChange={(e) => setBorrowDate(e.target.value)}
             />
             <button
-              className="mt-4 bg-green-500 text-white px-4 py-2 rounded"
+              className="mt-4 bg-[#01764C] border-none text-white px-4 py-2 rounded-md hover:bg-[#015a3a] transition duration-300 ease-in-out font-sans text-sm"
               onClick={() => handleConfirmBorrow(bookSelected.id)}
             >
               Confirmar

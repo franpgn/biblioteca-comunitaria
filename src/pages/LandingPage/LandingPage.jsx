@@ -75,12 +75,11 @@ const LandingPage = () => {
               <br />
             </p>
             <p className="text-[24px]">
-              4. Solicite o aluguel - Clique no botão <strong>"Alugar"</strong>{" "}
+              4. Solicite o aluguel - Clique no botão <strong>"Emprestar"</strong>{" "}
               e siga as instruções para confirmar a solicitação.
               <br />
               <br />
-              5. Finalize o processo - Caso seja necessário, realize o pagamento
-              conforme as opções disponíveis. - Após a confirmação, você
+              5. Finalize o processo. - Após a confirmação, você
               receberá as informações sobre o acesso ou retirada do livro.
             </p>
           </div>
@@ -110,37 +109,23 @@ const LandingPage = () => {
           <h2 className="text-4xl">Onde nós estamos</h2>
           <div className="flex justify-around">
             <div className="flex flex-col">
-              <p className="text-lg font-bold">
-                Rua XXX - Bairro X, Bagé
-                <br />
-                Rio Grande do Sul, Brasil
-                <br />
-                CEP: 12345-678
-              </p>
-            </div>
-            <div className="flex flex-col">
               <h3 className="text-3xl m-0">Localização no Google Maps</h3>
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d65897.86767664432!2d-54.0860367!3d-31.3172746!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9505df7561ae627b%3A0xc1051c6b4afaa779!2sUniversidade%20Federal%20do%20Pampa!5e1!3m2!1spt-BR!2sbr!4v1739195612435!5m2!1spt-BR!2sbr"
                 className="w-[670px] h-[330px]"
                 loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
+                referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
             </div>
           </div>
         </div>
       </div>
       <div></div>
-      <div className="bg-[#FFF0D7] flex items-center justify-around mt-[1800px]">
-        <div>
-          <img
-            src={LogoBltc}
-            alt="Logo da Biblioteca Comunitária"
-            className="w-[240px] h-[120px]"
-          />
-        </div>
-        <div className="flex items-start  list-none p-0 gap-5">
-          <div className="flex flex-col items-start list-none p-0 gap-1">
+      <div className="bg-[#bdad80] flex items-center justify-around mt-[1800px]">
+        
+        
+        <div className="flex items-start  list-none p-0 gap-40">
+          <div className="flex flex-col items-start list-none p-0">
             <h3 className="text-3xl">Informações</h3>
             <ul className="p-0">
               <li className="flex items-center">
@@ -165,11 +150,6 @@ const LandingPage = () => {
                   className="text-xl no-underline text-black transition-colors duration-400 hover:text-[#01764C]"
                 >
                   Segurança
-                </a>
-              </li>
-              <li className="flex items-center">
-                <a className="text-xl no-underline text-black transition-colors duration-400 hover:text-[#01764C]">
-                  #VemLerComAGente
                 </a>
               </li>
             </ul>
